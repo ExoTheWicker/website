@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    color: rgb(255, 0, 255);
+    font-size: 18px;
+}
+.links-sidebar{
+    border: 1px solid;
+    border-color: aqua;
+    width: fit-content;
+    width: 15%;
+    height: 100%;
+    overflow-wrap: break-word;
+}
