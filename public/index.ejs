@@ -7,19 +7,18 @@
     <link rel="stylesheet" href="../assets/css/main.css">
 
 </head>
-    <body><div class="container">
-        <div class="links-sidebar">
+        <div class="side-nav">
             <h1>Links:</h1>
-  
-  <% Object.keys(groupedLinks).forEach((category) => { %>
-    <h2><%= category %></h2>
-    <ul>
-      <% groupedLinks[category].forEach((link) => { %>
-        <li><a href="<%= link.url %>"><%= link.title %></a></li>
-      <% }); %>
-    </ul>
-  <% }); %>
+            <% Object.keys(groupedLinks).forEach((category) => { %>
+                <h2><%= category %></h2>
+                <ul>
+                <% groupedLinks[category].forEach((link) => { %>
+                    <li><a href="<%= link.url %>"><%= link.title %></a></li>
+                <% }); %>
+                </ul>
+            <% }); %>
         </div>
+        <div class="main-content">
     
             <h1>Welcome to my website!</h1>
 

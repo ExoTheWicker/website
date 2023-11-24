@@ -15,8 +15,7 @@
         height: 100%;
         overflow-wrap: break-word;
       }
-  
-      .post-content {
+      .main-content {
         flex: 1;
         padding-left: 20px; /* Add some padding for spacing */
       }
