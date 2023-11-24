@@ -32,7 +32,7 @@ app.post('/webhook', (req, res) => {
 // Deployment function
 function deploy() {
   // Adjust these commands based on your deployment needs
-  exec('cd /var/www/apps/exo-web && git pull && npm install && pm2 start server.js --name "Website" --cwd /var/www/apps/exo-web/', (error, stdout, stderr) => {
+  exec('cd /var/www/apps/exo-web && git stash&& git pull && git stash apply && npm install && pm2 stop server && pm2 start server.js --name "Website" --cwd /var/www/apps/exo-web/', (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
     } else {
