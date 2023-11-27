@@ -57,6 +57,20 @@ app.get('/resonite', (req, res) =>{
   res.render('resonite', { groupedLinks })
 })
 })
+app.get('/bluesky-codes', (req, res) =>{
+  db.query('SELECT * FROM `bs-codes` ', (err, results) => {
+    if (err) throw err;
+
+
+  links.getGroupedLinks((err, groupedLinks) => {
+    if (err) {
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+  res.render('bs', { groupedLinks, results })
+})
+})
+})
 
 
 

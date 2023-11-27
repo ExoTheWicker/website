@@ -4,8 +4,8 @@ const mysql = require('mysql2');
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'exo-web-user',
-  password: '*Vkq)6NX/g!4zw7j',
+  user: 'root',
+  password: '',
   database: 'exo-web',
 });
 

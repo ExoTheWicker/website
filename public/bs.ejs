@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - ExoTheWicker</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+
+</head>
+        <div class="nav-sidebar">
+            <h1>Links:</h1>
+            <% Object.keys(groupedLinks).forEach((category) => { %>
+                <h2><%= category %></h2>
+                <ul>
+                <% groupedLinks[category].forEach((link) => { %>
+                    <li><a href="<%= link.url %>"><%= link.title %></a></li>
+                <% }); %>
+                </ul>
+            <% }); %>
+        </div>
+        <div class="main-content">
+            <h1>Blue Sky Codes:</h1>
+            <% results.forEach((result) => { %>
+                <% if (result.used === 'true') { %>
+                  <h2><s><%= result.value %></s></h2>
+                <% } else { %>
+                  <h2><%= result.value %></h2>
+                <% } %>
+              <% }); %>
+              
+        </div>
+    </body>
+</html>
