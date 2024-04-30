@@ -1,79 +1,29 @@
 const express = require('express')
-const fs = require('fs')
-const mysql = require('mysql2');
-const links = require('./links/links');
-
+require('dotenv').config()
 
 const app = express()
-app.set('view engine', 'ejs')
-app.use(express.static('public'))
-app.set('views' , 'public')
-const port = 3621
-const db = require('./db/db');
-const blogRoutes = require('./routes/blog');
+const serveIndex = require('serve-index')
 
-// Use the blog routes
-app.use('/blog', blogRoutes);
-// Middleware to pass links data to every view
-app.use((req, res, next) => {
-  // Assuming links.getGroupedLinks is asynchronous and takes a callback
-  links.getGroupedLinks((err, groupedLinks) => {
-    if (err) {
-      console.error('Error getting grouped links:', err);
-      return next(err);
-    }
-    res.locals.groupedLinks = groupedLinks;
-    next();
-  });
-});
+// Define setting and middleware for Express
+
+// Set the Express view engine to use EJS
+app.set('view engine', 'ejs')
+
+// Set the static directory to 'public'
+
+app.use(express.static('public/assets'))
+
+app.set('views', 'public/views')
+
+
+
+// Routes and Routers
 
 app.get('/', (req, res) => {
-  links.getGroupedLinks((err, groupedLinks) => {
-    if (err) {
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-
-    res.render('index', { groupedLinks });
-  });
-});
-
-app.get('/neos', (req, res) =>{
-  links.getGroupedLinks((err, groupedLinks) => {
-    if (err) {
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-  
-  res.render('neos', { groupedLinks })
-})
-})
-app.get('/resonite', (req, res) =>{
-  links.getGroupedLinks((err, groupedLinks) => {
-    if (err) {
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-  res.render('resonite', { groupedLinks })
-})
-})
-app.get('/bluesky-codes', (req, res) =>{
-  db.query('SELECT * FROM `bs-codes` ', (err, results) => {
-    if (err) throw err;
-
-
-  links.getGroupedLinks((err, groupedLinks) => {
-    if (err) {
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-  res.render('bs', { groupedLinks, results })
-})
-})
+    res.render('index')
 })
 
+app.use('/ftp', express.static('public/files'), serveIndex('public/files', {'icons': true, template: 'public/views/ftp.html'}))
 
-
-app.listen(port, () => {
-  console.log(`app listening on port ${port}`)
-})
+app.listen(process.env.PORT)
+console.log('Starting ExoTheWicker website Server on port ' + process.env.PORT)
