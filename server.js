@@ -30,6 +30,10 @@ app.get('/liny', (req, res) => {
     res.render('liny')
 })
 
+app.get('/nsfw_info', (req, res) => {
+    res.render('nsfw_info')
+})
+
 app.listen(process.env.PORT)
 console.log('Starting ExoWebOS...' .yellow)
 console.log('Connecting to SQL database...')
