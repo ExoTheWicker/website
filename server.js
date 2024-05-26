@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
 
 app.use('/files', express.static('public/files'), serveIndex('public/files', {'icons': true}))
 
+app.get('/links', (req, res) => {
+    res.render('links')
+})
+
 app.get('/liny', (req, res) => {
     res.render('liny')
 })
