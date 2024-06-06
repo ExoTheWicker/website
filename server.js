@@ -38,6 +38,21 @@ app.get('/nsfw_info', (req, res) => {
     res.render('nsfw_info')
 })
 
+
+app.route('*')
+    .post((req, res) =>{
+        res.render('errors/404')
+    })
+    .get((req, res) =>{
+        res.render('errors/404')
+    })
+    .patch((req, res) =>{
+        res.render('errors/404')
+    })
+    .delete((req, res) =>{
+        res.render('errors/404')
+    })
+
 app.listen(process.env.PORT)
 console.log('Starting ExoWebOS...' .yellow)
 console.log('Connecting to SQL database...')

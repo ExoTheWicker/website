@@ -15,6 +15,14 @@ body{
     font-size: large;
     font-family: 'modern_dos_8x16regular';
 }
+.site-main{
+    display: flex;
+}
+.main-content{
+    float: left;
+    padding-left: 15px;
+    justify-content: center;
+}
 
 a{
     color:blue
