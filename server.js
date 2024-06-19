@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.use('/files', express.static('public/files'), serveIndex('public/files', {'icons': true}))
+app.use('/files', express.static('public/files'), serveIndex('public/files', {template: './public/views/ftp.ejs', 'icons': true}))
 
 app.get('/links', (req, res) => {
     res.render('links')
