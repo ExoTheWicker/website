@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ExoTheWicker NSFW Info</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+    <div class="site-main">
+    <%- include('includes/navbar') %>
+        <div class="main-content">
+            <p>I have two sona's with (lore wise) different tastes</p>
+            <div clas="tab-select">
+                <button onclick="openTab('1')" class="btn">Exo</button>
+                <button onclick="openTab('2')" class="btn">Cybrix</button>
+            </div>
+            <div class="tabs-container">
+                <div class="tab" id="tab1">
+                    <div class="tab-header">
+                        <b>ExoTheWicker NSFW Info </b>
+                    </div>
+                    <p>Dick Style: Canine (Knotted)</p>
+                    <p>Dick Color: (NOT EXACT) <span style="color: magenta; font-size: 48px;">■</span></p>
+                    <p>Sheath / Balls Color: (NOT EXACT) <span style="color: black; font-size: 24px;">■</span></p>
+                    <p>Dick length: 7.5 Inches</p>
+                    <p>Knot Width: 2.45 Inches</p>
+                    <p>Knot Durration: less than 10 minutes.</p>
+                    <p>Ejaculation Ammount: ~25ML but varies depending on arousal.</p>
+                    <p>Images and Video</p>
+                    <hr style="color: white;">
+                    <h1>Body:</h1>
+                    <img src="/img/nsfw/exo/Exo-Front.jpg" height="250px">
+                    <img src="/img/nsfw/exo/Exo-Back.jpg" height="250px"><br>
+                    <img src="/img/nsfw/exo/Exo-Front NO CLOTHES.jpg" height="250px">
+                    <img src="/img/nsfw/exo/Exo-Back NO CLOTHES.jpg" height="250px"><br>
+                    <img src="/img/nsfw/exo/Exo-Front SHEATHED.jpg" height="250px">
+                    <img src="/img/nsfw/exo/Exo-Front ERECT.jpg" height="250px">
+                    <hr style="color: white;">
+                    <h1>Penis Close Up:</h1>
+                    <img src="/img/nsfw/exo/Exo-Dick Side CLOSE SHEATHED.jpg" height="250px"> 
+                    <img src="/img/nsfw/exo/Exo-Dick CLOSE SHEATHED 2.jpg" height="250px"><br> 
+                    <img src="/img/nsfw/exo/Exo-Dick ERECT.jpg" height="250px"> 
+                    <img src="/img/nsfw/exo/Exo-Dick CLOSE TIP.jpg" height="250px"> 
+            </div>
+            <div class="tab" id="tab2" style="display: none;">
+                <div class="tab-header">
+                    <b>CybrixTheProtogen NSFW Info </b>
+                </div>
+                    <p>Dick Style: Canine (Knotted)</p>
+                    <p>Dick Color: (NOT EXACT) <span style="color: cyan; font-size: 24px;">■</span></p>
+                    <p>Sheath / Balls Color: (NOT EXACT) <span style="color: black; font-size: 24px;">■</span></p>
+                    <p>Dick length: 10.75 Inches</p>
+                    <p>Knot Width: 3 Inches</p>
+                    <p>Knot Durration: It depends on the partner but on average it's ~15 minutes.</p>
+                    <p>Ejaculation Ammount: ~55ML but varies depending on arousal.</p>
+                    <p>Images and Video</p>
+                    <hr style="color: white;">
+                    <h1>Body:</h1>
+                    <img src="/img/nsfw/cybrix/Cybrix-Front.jpg" height="250px">
+                    <img src="/img/nsfw/cybrix/Cybrix-Back.jpg" height="250px">
+                    <p>Armor can be removed.</p>
+                    <img src="/img/nsfw/cybrix/Cybrix-Front NO ARMOR.jpg" height="250px">
+                    <img src="/img/nsfw/cybrix/Cybrix-Front NO ARMOR 2.jpg" height="250px">
+                    <p>If they get booped to many times they will bluescreen</p>
+                    <img src="/img/nsfw/cybrix/Cybrix-Face BLUESCREEN.jpg" height="250px">
+                    <h1>Penis:</h1>
+                    <img src="/img/nsfw/cybrix/Cybrix-Side SHEATHED.jpg" height="250px">
+                    <img src="/img/nsfw/cybrix/Cybrix-Side NO ARMOR SHEATHED.jpg" height="250px">
+                    <img src="/img/nsfw/cybrix/Cybrix-Side ERECT.jpg" height="250px"><br>
+                    <img src="/img/nsfw/cybrix/Cybrix-Front SHEATHED.jpg" height="250px">
+                    <img src="/img/nsfw/cybrix/Cybrix-Front NO ARMOR SHEATHED.jpg" height="250px">
+                    <img src="/img/nsfw/cybrix/Cybrix-Front ERECT.jpg" height="250px">
+                    <h1>Penis Close Up</h1>
+                    <img src="/img/nsfw/cybrix/Cybrix-Dick-Front SHEATHED.jpg" height="250px">
+                    <img src="/img/nsfw/cybrix/Cybrix-Dick-Side SHEATHED.jpg" height="250px">
+                    <img src="/img/nsfw/cybrix/Cybrix-Dick-Side ERECT.jpg" height="250px">
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
+<script>
+    function openTab(tab) {
+        if(tab == '1'){
+            document.getElementById('tab1').style.display = ""
+            document.getElementById('tab2').style.display = "none"
+
+            console.log('function called')
+            
+        }else{
+            if(tab =='2'){
+            document.getElementById('tab2').style.display = ""
+            document.getElementById('tab1').style.display = "none"
+
+            }
+        }
+        
+    }
+</script>
 </html>

@@ -20,6 +20,7 @@ body{
 }
 .main-content{
     float: left;
+    width: 100rem;
     padding-left: 15px;
     justify-content: center;
 }
@@ -34,4 +35,36 @@ a:hover{
 .hover:hover{
     color:white
 }
+.btn{
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+    background: silver;
+    color: black;
+    justify-content: center;
+    padding: 0 0 4px;
+    border-radius: 1px;
+    min-width: 100px;
+}
+.tab{
+    border: 1px solid white;
+    border-style: outset;
+    background-color: gray;
+    min-height: 50px; 
+    max-width: fit-content;
+    padding-top: 0px;
+    max-height: 85vh;
+    overflow-y: scroll;
 
+}
+.tab-header {
+    background-color: blue;
+    min-height: 1rem;
+    height: min-content;
+    color: white;
+    text-indent: 5px;
+    min-width: 100%;
+    
+  }
