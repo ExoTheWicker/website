@@ -1,6 +1,10 @@
+console.log('Starting ExoWebOS...')
 const express = require('express')
 require('dotenv').config()
 var colors = require('colors');
+
+console.log('Connecting to SQL database...')
+//const sql = require('./db/dbConnector')
 
 const app = express()
 const serveIndex = require('serve-index')
@@ -16,9 +20,19 @@ app.use(express.static('public/assets'))
 
 app.set('views', 'public/views')
 
-
-
 // Routes and Routers
+
+// Define a route that intentionally causes an error
+app.get('/error', (req, res, next) => {
+    // Here we throw an error deliberately
+    const error = new Error('Intentional error for testing');
+    // You can also customize the error by setting its properties
+    error.status = 500; // Set HTTP status code for the error
+    // Pass the error to the next middleware
+    next(error);
+});
+
+app.use('/blog', require('./routes/blog'))
 
 app.get('/', (req, res) => {
     res.render('index')
@@ -38,6 +52,7 @@ app.get('/nsfw_info', (req, res) => {
     res.render('nsfw_info')
 })
 
+app.use(require('./functions/error_handeler'))
 
 app.route('*')
     .post((req, res) =>{
@@ -54,8 +69,5 @@ app.route('*')
     })
 
 app.listen(process.env.PORT)
-console.log('Starting ExoWebOS...' .yellow)
-console.log('Connecting to SQL database...')
-console.log('Checking SkyAura API for status...')
-console.log('checking WickerAPI status...')
+
 console.log('All checks ' + 'OK! '.green + ' starting server on port '.brightGreen + process.env.PORT .brightGreen)

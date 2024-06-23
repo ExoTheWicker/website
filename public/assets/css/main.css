@@ -56,14 +56,14 @@ a:hover{
     min-width: 250px;
     max-width: fit-content;
     padding-top: 0px;
-    max-height: 85vh;
+    height: fit-content;
     overflow: auto;
 
 }
 .tab-header {
     background-color: blue;
     min-height: 1rem;
-    height: min-content;
+    height: fit-content;
     color: white;
     text-indent: 5px;
     min-width: 100%;
@@ -74,6 +74,12 @@ a:hover{
     padding-top: 2px;
     padding-bottom: 1px;
     text-align: left; 
+  }
+
+  .tab-body{
+    max-height: fit-content;
+    overflow: auto;
+    max-height: 75vh;
   }
   .card-header.icon{
     padding-left: 4px;
