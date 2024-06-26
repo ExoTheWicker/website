@@ -4,7 +4,9 @@ require('dotenv').config()
 var colors = require('colors');
 
 console.log('Connecting to SQL database...')
-//const sql = require('./db/dbConnector')
+const db = require('./db/dbConnector')
+
+var bodyParser = require('body-parser')
 
 const app = express()
 const serveIndex = require('serve-index')
@@ -15,10 +17,9 @@ const serveIndex = require('serve-index')
 app.set('view engine', 'ejs')
 
 // Set the static directory to 'public'
-
 app.use(express.static('public/assets'))
-
 app.set('views', 'public/views')
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Routes and Routers
 

@@ -12,11 +12,13 @@
 body{
     background-color: black;
     color: lime;
-    font-size: large;
+        font-size: large;
     font-family: 'modern_dos_8x16regular';
 }
 .site-main{
     display: flex;
+    
+    
 }
 .main-content{
     float: left;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/ui/assets/css/default.min.css">
+</head>
+<body>
+    <div class="site-main">
+        <%- include('../includes/navbar') %>
+        <div class="main-content">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                <title>CKEditor 5 – Classic editor</title>
+                <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+            </head>
+            <body>
+                <div class="site-main">
+                    <div class="main-content">
+                        <div class="tab">
+                            
+                            <div class="tab-header">
+                                BlogMaker
+                            </div>
+                                <div class="tab-body" style="width: 65em; height:55em; color: black;">
+                                    <form action="/blog/new" method="POST">
+                                        <label for="title">Title That Shit!</label><br>
+                                        <input type="text" name="title" id="title" placeholder="Title"><br>
+                                        
+                                        <textarea id="editor" rows="4" cols="50" name="content"></textarea>
+                                        <button type="submit">Make It!</button>
+                                    </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#editor' ) )
+                        .catch( error => {
+                            console.error( error );
+                        } );
+                </script>
+            </body>
+            </html>
+            
+            
+
+        </div>
+    </div>
+
+    <script src="/ui/assets/js/apt_query.min.js"></script>
+    <script src="/ui/assets/js/default.min.js"></script>
+</body>
+</html>

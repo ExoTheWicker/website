@@ -14,7 +14,22 @@
                     <img src="/img/icons/win98/channels-0.png"> <b>Exo's Blog Articles</b>
                 </div>
                 <div class="tab-body">
-                    NO ARTICLES YET...
+                    <% articles.forEach(article => {
+                        %>
+                        
+                        <div class="blog-article">
+                            <a href="/blog/<%- article.ID%>">
+                                <article>
+                                    <div class="article-title">
+                                        <%- article.title%>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        
+                        <%
+                        
+                    }); %>
                 </div>
             </div>
         </div>
